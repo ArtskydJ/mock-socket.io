@@ -1,6 +1,8 @@
 mock-socket.io
 ==============
 
+[![Build Status](https://travis-ci.org/ArtskydJ/mock-socket.io.svg?branch=master)](https://travis-ci.org/ArtskydJ/mock-socket.io)
+
 Simple mock for socket.io, for testing!
 
 When I say simple, I mean *really* simple. The entire library is smaller than this readme.
