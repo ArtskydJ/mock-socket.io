@@ -1,7 +1,7 @@
 ﻿var test = require('tap').test
 var mock = require('./')
 
-test('seems to work and stuff', {timeout:3000}, function (t) {
+test('seems to work and stuff', {timeout:5000}, function (t) {
 	t.plan(7)
 	
 	//server
