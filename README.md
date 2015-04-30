@@ -11,7 +11,7 @@ When I say simple, I mean *really* simple. The entire library is smaller than th
 
 Issues and Pull Requests are welcome.
 
-#usage
+# usage
 
 server.js
 ```js
@@ -32,6 +32,6 @@ var io = new Client(serverIo)
 //do stuff with `io`
 ```
 
-#license
+# license
 
 [VOL](http://veryopenlicense.com)
