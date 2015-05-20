@@ -2,6 +2,8 @@ mock-socket.io
 ==============
 
 [![Build Status](https://travis-ci.org/ArtskydJ/mock-socket.io.svg?branch=master)](https://travis-ci.org/ArtskydJ/mock-socket.io)
+[![Dependency Status](https://david-dm.org/artskydj/mock-socket.io.svg)](https://david-dm.org/artskydj/mock-socket.io)
+[![devDependency Status](https://david-dm.org/artskydj/mock-socket.io/dev-status.svg)](https://david-dm.org/artskydj/mock-socket.io#info=devDependencies)
 
 Simple mock for socket.io, for testing!
 
