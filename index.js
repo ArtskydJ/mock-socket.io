@@ -1,7 +1,24 @@
+var util = require('util')
 var EventEmitter = require('events').EventEmitter
 
 function randStr() {
 	return Math.random().toString().slice(2)
+}
+
+function Socket(counterpart) {
+  this.counterpart = counterpart;
+}
+
+util.inherits(Socket, EventEmitter);
+
+Socket.prototype.set_counterpart = function(counterpart) {
+  this.counterpart = counterpart;
+}
+
+Socket.prototype._emit = Socket.prototype.emit
+
+Socket.prototype.emit = function() {
+  Socket.prototype._emit.apply(this.counterpart, arguments)
 }
 
 function Server() {
@@ -12,15 +29,18 @@ function Server() {
 }
 
 function Client(svr) {
-	var socket = new EventEmitter
+	var clientSocket = new Socket
+	var serverSocket = new Socket(clientSocket)
+	clientSocket.set_counterpart(serverSocket)
 	process.nextTick(function () {
-		svr.emit('connect', socket)
-		svr.emit('connection', socket)
-		socket.emit('connect')
-		socket.emit('connection')
+		svr.emit('connect', serverSocket)
+		svr.emit('connection', serverSocket)
+		clientSocket._emit('connect')
+		clientSocket._emit('connection')
 	})
-	socket.id = randStr()
-	return socket
+	clientSocket.id = randStr()
+	serverSocket.id = clientSocket.id
+	return clientSocket
 }
 
 module.exports = {
