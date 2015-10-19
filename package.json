@@ -14,13 +14,13 @@
     "type": "git",
     "url": "https://github.com/ArtskydJ/mock-socket.io"
   },
-  "devDependencies": {
-    "tap": "^2.1.1"
-  },
   "scripts": {
     "test": "tap test.js"
   },
   "dependencies": {},
+  "devDependencies": {
+    "tap": "^2.1.1"
+  },
   "bugs": {
     "url": "https://github.com/ArtskydJ/mock-socket.io/issues"
   },

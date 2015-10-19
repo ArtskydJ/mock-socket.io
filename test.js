@@ -21,7 +21,7 @@ test('seems to work and stuff', { timeout: 5000 }, function (t) {
 			t.deepEqual(argArray, ['do', 'gs', 'dogs'], 'the lazy dogs')
 		})
 
-		socket.on('jumps', function(){
+		socket.on('jumps', function () {
 			t.bailout('jumps called on server socket')
 		})
 	})

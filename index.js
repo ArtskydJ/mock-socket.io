@@ -6,13 +6,13 @@ function randStr() {
 }
 
 function Socket(counterpart) {
-	this.counterpart = counterpart;
+	this.counterpart = counterpart
 }
 
-util.inherits(Socket, EventEmitter);
+util.inherits(Socket, EventEmitter)
 
 Socket.prototype.setCounterpart = function(counterpart) {
-	this.counterpart = counterpart;
+	this.counterpart = counterpart
 }
 
 Socket.prototype._emit = Socket.prototype.emit
