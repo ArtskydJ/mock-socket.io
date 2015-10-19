@@ -7,8 +7,6 @@ mock-socket.io
 
 Simple mock for socket.io, for testing!
 
-When I say simple, I mean *really* simple. The entire library is smaller than this readme.
-
 **Only the basics of socket.io are supported.** Rooms, namespaces, etc. are not supported. If you're using socket.io for a simple app, this is a nice drop-in replacement.
 
 Issues and Pull Requests are welcome.
