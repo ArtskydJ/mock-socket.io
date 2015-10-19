@@ -1,6 +1,6 @@
 {
   "name": "mock-socket.io",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./index.js",
   "author": "ArtskydJ <josephdykstra@gmail.com>",
   "description": "Simple mock for socket.io, for testing!",
