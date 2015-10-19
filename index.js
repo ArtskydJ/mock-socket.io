@@ -6,32 +6,32 @@ function randStr() {
 }
 
 function Socket(counterpart) {
-  this.counterpart = counterpart;
+	this.counterpart = counterpart;
 }
 
 util.inherits(Socket, EventEmitter);
 
-Socket.prototype.set_counterpart = function(counterpart) {
-  this.counterpart = counterpart;
+Socket.prototype.setCounterpart = function(counterpart) {
+	this.counterpart = counterpart;
 }
 
 Socket.prototype._emit = Socket.prototype.emit
 
 Socket.prototype.emit = function() {
-  Socket.prototype._emit.apply(this.counterpart, arguments)
+	Socket.prototype._emit.apply(this.counterpart, arguments)
 }
 
 function Server() {
-	var svr = new EventEmitter
+	var svr = new EventEmitter()
 	svr.attach = function () {}
 	svr.listen = function () {}
 	return svr
 }
 
 function Client(svr) {
-	var clientSocket = new Socket
+	var clientSocket = new Socket()
 	var serverSocket = new Socket(clientSocket)
-	clientSocket.set_counterpart(serverSocket)
+	clientSocket.setCounterpart(serverSocket)
 	process.nextTick(function () {
 		svr.emit('connect', serverSocket)
 		svr.emit('connection', serverSocket)

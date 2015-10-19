@@ -1,9 +1,9 @@
 var test = require('tap').test
 var mock = require('./')
 
-test('seems to work and stuff', {timeout:5000}, function (t) {
+test('seems to work and stuff', { timeout: 5000 }, function (t) {
 	t.plan(7)
-	
+
 	//server
 	var srv = new mock.Server()
 	srv.on('connect', function (socket) {
@@ -20,9 +20,9 @@ test('seems to work and stuff', {timeout:5000}, function (t) {
 			var argArray = [].slice.call(arguments)
 			t.deepEqual(argArray, ['do', 'gs', 'dogs'], 'the lazy dogs')
 		})
-		
+
 		socket.on('jumps', function(){
-		  t.bailout('jumps called on server socket')
+			t.bailout('jumps called on server socket')
 		})
 	})
 
